@@ -1,0 +1,2 @@
+#!/bin/bash
+docker-compose exec client bash -c "/opt/splunkforwarder/bin/splunk start --accept-license; /opt/splunkforwarder/bin/splunk add monitor /var/log; /opt/splunkforwarder/bin/splunk add forward-server splunk:9997; /opt/splunkforwarder/bin/splunk restart"

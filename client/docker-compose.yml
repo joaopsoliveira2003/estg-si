@@ -1,0 +1,18 @@
+version: "3.6"
+
+networks:
+  splunk-network:
+    name: splunk-network
+    external: true
+
+services:
+  client:
+    build: .
+    image: splunk-client
+    container_name: client
+    hostname: client
+    networks:
+      - splunk-network
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
